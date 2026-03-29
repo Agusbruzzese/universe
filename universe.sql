@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict furcNSKxkn02UimQKUhshPygIekb1Njc9aug9PJLMGwDJrmu5tJn1pl6QJ2ArkY
+\restrict egRarFEZE7K1GmavliCM4SkLucotwYP3AJHYHoPR4D43h5oD2oPbcD4JJDmx3AE
 
 -- Dumped from database version 16.13 (Ubuntu 16.13-0ubuntu0.24.04.1)
 -- Dumped by pg_dump version 16.13 (Ubuntu 16.13-0ubuntu0.24.04.1)
@@ -28,9 +28,9 @@ CREATE DATABASE universe WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROV
 
 ALTER DATABASE universe OWNER TO freecodecamp;
 
-\unrestrict furcNSKxkn02UimQKUhshPygIekb1Njc9aug9PJLMGwDJrmu5tJn1pl6QJ2ArkY
+\unrestrict egRarFEZE7K1GmavliCM4SkLucotwYP3AJHYHoPR4D43h5oD2oPbcD4JJDmx3AE
 \connect universe
-\restrict furcNSKxkn02UimQKUhshPygIekb1Njc9aug9PJLMGwDJrmu5tJn1pl6QJ2ArkY
+\restrict egRarFEZE7K1GmavliCM4SkLucotwYP3AJHYHoPR4D43h5oD2oPbcD4JJDmx3AE
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -52,7 +52,7 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.asteroids (
-    asteroid_id integer NOT NULL,
+    asteroids_id integer NOT NULL,
     name character varying(50) NOT NULL,
     has_orbit boolean DEFAULT false NOT NULL,
     description text,
@@ -82,7 +82,7 @@ ALTER SEQUENCE public.asteroids_asteroid_id_seq OWNER TO freecodecamp;
 -- Name: asteroids_asteroid_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
 --
 
-ALTER SEQUENCE public.asteroids_asteroid_id_seq OWNED BY public.asteroids.asteroid_id;
+ALTER SEQUENCE public.asteroids_asteroid_id_seq OWNED BY public.asteroids.asteroids_id;
 
 
 --
@@ -247,10 +247,10 @@ ALTER SEQUENCE public.star_star_id_seq OWNED BY public.star.star_id;
 
 
 --
--- Name: asteroids asteroid_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
+-- Name: asteroids asteroids_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
 --
 
-ALTER TABLE ONLY public.asteroids ALTER COLUMN asteroid_id SET DEFAULT nextval('public.asteroids_asteroid_id_seq'::regclass);
+ALTER TABLE ONLY public.asteroids ALTER COLUMN asteroids_id SET DEFAULT nextval('public.asteroids_asteroid_id_seq'::regclass);
 
 
 --
@@ -406,7 +406,7 @@ ALTER TABLE ONLY public.asteroids
 --
 
 ALTER TABLE ONLY public.asteroids
-    ADD CONSTRAINT asteroids_pkey PRIMARY KEY (asteroid_id);
+    ADD CONSTRAINT asteroids_pkey PRIMARY KEY (asteroids_id);
 
 
 --
@@ -501,5 +501,5 @@ ALTER TABLE ONLY public.star
 -- PostgreSQL database dump complete
 --
 
-\unrestrict furcNSKxkn02UimQKUhshPygIekb1Njc9aug9PJLMGwDJrmu5tJn1pl6QJ2ArkY
+\unrestrict egRarFEZE7K1GmavliCM4SkLucotwYP3AJHYHoPR4D43h5oD2oPbcD4JJDmx3AE
 
